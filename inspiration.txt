@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inspiration & Resources</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: rgba(239, 235, 206, 0.3);
+      color: #3f2e2e;
+      position: relative;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url('petals.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.28;
+      z-index: -1;
+      filter: brightness(1.1) saturate(1.2);
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px;
+      background-color: #BB8588;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+    }
+
+    .top-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .top-nav a:hover {
+      color: #F9F3E7;
+    }
+
+    header {
+      background-image: url('header.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 6px dotted #D8A48F;
+    }
+
+    header h1 {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px 40px;
+      border-radius: 20px;
+      font-size: 3.5rem;
+      color: #BB8588;
+      margin: 0;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      color: #BB8588;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      overflow: hidden;
+      table-layout: fixed;
+    }
+
+    th, td {
+      padding: 18px 20px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 1.1rem;
+      word-wrap: break-word;
+    }
+
+    th {
+      background-color: #D8A48F;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #FAF6E5;
+    }
+
+    tr:hover {
+      background-color: #F1E3D3;
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+      width: 20%;
+      font-weight: 700;
+      color: #8B5E3C;
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+      width: 55%;
+    }
+
+    th:nth-child(3), td:nth-child(3) {
+      width: 25%;
+    }
+
+    td a {
+      color: #BB8588;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      color: #D8A48F;
+      text-decoration: underline;
+    }
+
+    .image-box {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;
+    }
+
+    .profile-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 160px;
+    }
+
+    .profile-box img {
+      height: 160px;
+      width: 160px;
+      border-radius: 50%;
+      border: 6px solid #D7CE93;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-box img:hover {
+      transform: scale(1.05);
+    }
+
+    .name-tag {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #FAF6E5;
+      border: 2px solid #D8A48F;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #8B5E3C;
+      text-align: center;
+      width: fit-content;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .top-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .image-box {
+        gap: 20px;
+      }
+
+      .image-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .profile-box {
+        width: 140px;
+      }
+
+      .profile-box img {
+        height: 140px;
+        width: 140px;
+      }
+
+      th, td {
+        padding: 15px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="steps.html">Step-by-Step Guide</a>
+    <a href="inspirations.html">Inspiration & Resources</a>
+  </div>
+
+  <header>
+    <h1>Inspiration & Resources</h1>
+  </header>
+
+  <div class="container">
+    <h2>Inspiration in Florist Design</h2>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Field</th>
+        <th>Website</th>
+      </tr>
+      <tr>
+        <td>Jeff Leatham</td>
+        <td>Artistic Director of the Four Seasons Hotel George V in Paris. Famous for bold, architectural floral installations.</td>
+        <td><a href="https://www.jeffleathamflowers.com/" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <td>Kristen Griffith-VanderYacht</td>
+        <td>Celebrity florist featured on Netflix’s The Big Flower Fight. Known for whimsical and large-scale botanical designs.</td>
+        <td><a href="https://wildbloomflorals.com" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <td>Sarah Winward</td>
+        <td>Specializes in organic, naturalistic wedding arrangements and destination events.</td>
+        <td><a href="https://sarahwinward.com" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <td>Maurice Harris</td>
+        <td>Founder of Bloom & Plume in LA. Celebrated for creative, high-fashion floral artistry and brand collaborations.</td>
+        <td><a href="https://bloomandplume.com" target="_blank">Click here</a></td>
+      </tr>
+      <tr>
+        <td>Tulipina (Kiana Underwood)</td>
+        <td>International floral designer known for her use of vibrant colors and rich textures.</td>
+        <td><a href="https://tulipina.com" target="_blank">Click here</a></td>
+      </tr>
+    </table>
+
+    <div class="image-box">
+      <div class="image-row">
+        <div class="profile-box">
+          <img src="jeff.jpg" alt="Jeff Leatham">
+          <div class="name-tag">Jeff Leatham</div>
+        </div>
+        <div class="profile-box">
+          <img src="kristen.jpg" alt="Kristen Griffith">
+          <div class="name-tag">Kristen Griffith</div>
+        </div>
+        <div class="profile-box">
+          <img src="sarah.jpg" alt="Sarah Winward">
+          <div class="name-tag">Sarah Winward</div>
+        </div>
+      </div>
+      <div class="image-row">
+        <div class="profile-box">
+          <img src="Harris.jpg" alt="Maurice Harris">
+          <div class="name-tag">Maurice Harris</div>
+        </div>
+        <div class="profile-box">
+          <img src="kiana.jpg" alt="Kiana Underwood">
+          <div class="name-tag">Kiana Underwood</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

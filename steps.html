@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step by Step Guide</title>
+  <style>
+    :root {
+      --soft-yellow: #EFEBCE;
+      --peachy: #D8A48F;
+      --rose: #BB8588;
+      --light-gold: #D7CE93;
+      --white: #ffffff;
+      --text-color: #5e3d35;
+      --shadow-dark: rgba(0, 0, 0, 0.15);
+      --glow-color: rgba(187, 133, 136, 0.8);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--soft-yellow);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .gradient-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .circle1 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #D8A48F, transparent);
+      top: 100px;
+      left: -80px;
+    }
+
+    .circle2 {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #BB8588, transparent);
+      bottom: 100px;
+      right: -60px;
+    }
+
+    .circle3 {
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #D7CE93, transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff8f5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: var(--rose);
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--rose);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--peachy);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .checkered-container {
+      width: 100vw;
+      margin-top: 0;
+      position: relative;
+      z-index: 2;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      display: block;
+    }
+
+    .checkered-box {
+      width: 100vw;
+      height: 60px;
+      background: repeating-linear-gradient(
+        45deg,
+        #fff8f5 0 25px,
+        #efd8cf 25px 50px
+      );
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .centered-text {
+      margin-top: 24px;
+      text-align: center;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .centered-text h1 {
+      font-size: 2.4rem;
+      color: var(--text-color);
+      margin-bottom: 10px;
+    }
+
+    .centered-text p {
+      font-size: 1.35rem;
+      color: var(--rose);
+      margin-top: 0;
+    }
+
+    header {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .checkered-box {
+        height: 50px;
+      }
+      .centered-text h1 {
+        font-size: 1.5rem;
+      }
+      .centered-text p {
+        font-size: 1.05rem;
+      }
+    }
+
+    .moving-checker {
+      display: none;
+    }
+
+    main {
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      z-index: 2;
+    }
+
+    .step-card {
+      background: linear-gradient(145deg, var(--light-gold), var(--peachy));
+      border-radius: 20px;
+      box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 10px white;
+      cursor: pointer;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .step-card:hover {
+      transform: scale(1.03);
+    }
+
+    .frame-container {
+      margin: 15px auto;
+      width: 90%;
+      height: 120px;
+      border: 3px solid var(--rose);
+      border-radius: 15px;
+      background-color: #fff8f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .frame-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h3 {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    .step-info {
+      background: var(--rose);
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 0 0 15px 15px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .step-card:hover .step-info {
+      opacity: 1;
+      max-height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gradient-circle circle1"></div>
+  <div class="gradient-circle circle2"></div>
+  <div class="gradient-circle circle3"></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="steps.html">Step by Step</a>
+    <a href="resources.html">Inspirations</a>
+  </nav>
+  <div class="checkered-container">
+    <div class="checkered-box"></div>
+  </div>
+
+  <div class="centered-text">
+    <h1>The Path</h1>
+    <p class="subtitle">Step by Step Guide to Being A Florist</p>
+  </div>
+  <main>
+    <div class="step-card">
+      <div class="frame-container"><img src="floristclass.jpg" alt="experience" /></div>
+      <h3>Get Hands-On Experience</h3>
+      <div class="step-info">Volunteer or intern at a local florist shop to gain practical, real-world experience.</div>
+    </div>
+    <div class="step-card">
+      <div class="frame-container"><img src="florist3.jpg" alt="classes" /></div>
+      <h3>Take Floral Design Classes</h3>
+      <div class="step-info">Enroll in floral design courses offered by community colleges or specialized floral schools.</div>
+    </div>
+    <div class="step-card">
+      <div class="frame-container"><img src="develop.jpg" alt="practice" /></div>
+      <h3>Practice and Develop Your Style</h3>
+      <div class="step-info">Regularly practice making flower arrangements at home. Experiment with different flowers, colors, and styles to discover your unique design approach.</div>
+    </div>
+    <div class="step-card">
+      <div class="frame-container"><img src="portfolio.jpg" alt="Portfolio" /></div>
+      <h3>Build Portfolio</h3>
+      <div class="step-info">As you gain experience, photograph your best arrangements and compile them into a professional portfolio.</div>
+    </div>
+    <div class="step-card">
+      <div class="frame-container"><img src="certificate.jpg" alt="Certificate" /></div>
+      <h3>Consider Certification or Formal Training</h3>
+      <div class="step-info">Earning a floristry certificate or completing a formal training program can boost your credentials and deepen your knowledge.</div>
+    </div>
+    <div class="step-card">
+      <div class="frame-container"><img src="shop.jpg" alt="Business" /></div>
+      <h3>Start Your Own Business</h3>
+      <div class="step-info">If you have business skills and resources, consider starting your own florist business.</div>
+    </div>
+  </main>
+
+</body>
+</html>
